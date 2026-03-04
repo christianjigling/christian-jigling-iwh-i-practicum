@@ -1,32 +1,23 @@
 doctype html
 html
     head
-        title= "Update Custom Object Form | Integrating With HubSpot I Practicum"
+        title= `${title}`
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(rel="stylesheet", href="/css/style.css")
     body
-        h1 Update Custom Object Form | Integrating With HubSpot I Practicum
-        .cards
-            each cat in data
-                .card
-                    h2.card__name #{cat.properties.name}
-
-
-
-
-
-//- ** This is a sample of a pug template and how it uses the data passed to it from index.js.
-
-//- doctype html
-//- html 
-//-     head 
-//-         title= `${title}`
-//-         meta(name="viewport" content="width=device-width, initial-scale=1")
-//-         link(rel="stylesheet", href="/css/style.css")
-//-     body    
-//-         h1 Contacts
-//-         .cards 
-//-             each contact in data
-//-                 .card 
-//-                     h2.card__name #{contact.properties.firstname}  #{contact.properties.lastname}
-//-                     p.card__email #{contact.properties.email}
+        h1 Update Custom Object
+        
+        a(href="/") Return to the homepage
+        
+        .form-wrapper
+            form(action="/update-cobj" method="POST")
+                label(for="name") Name:
+                input(type="text" name="name" id="name" required)
+                
+                label(for="breed") Breed:
+                input(type="text" name="breed" id="breed" required)
+                
+                label(for="age") Age:
+                input(type="number" name="age" id="age" required)
+                
+                input(type="submit" value="Submit")

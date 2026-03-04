@@ -33,27 +33,12 @@ app.get('/', async (req, res) => {
 
 // TODO: ROUTE 2 - Create a new app.get route for the form to create or update new custom object data. Send this data along in the next route.
 
-app.get('/update-cobj', async (req, res) => {
-    const catsUrl = 'https://api.hubspot.com/crm/v3/objects/cats?properties=name,breed,age'; 
-    const headers = {
-        Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
-        'Content-Type': 'application/json'
-    };
-
-    try {
-        const resp = await axios.get(catsUrl, { headers });
-        const data = resp.data.results;
-        res.render('homepage', { title: 'Cats | HubSpot APIs', data });      
-    } catch (error) {
-        console.error('Error fetching cats:', error.response ? error.response.data : error.message);
-        res.send('Something went wrong when fetching the cats.');
-    }
+app.get('/update-cobj', (req, res) => {
+    res.render('updates', { title: 'Update Custom Object Form | Integrating With HubSpot I Practicum' });
 });
-// * Code for Route 2 goes here
 
 // TODO: ROUTE 3 - Create a new app.post route for the custom objects form to create or update your custom object data. Once executed, redirect the user to the homepage.
 
-// * Code for Route 3 goes here
 
 /** 
 * * This is sample code to give you a reference for how you should structure your calls. 
