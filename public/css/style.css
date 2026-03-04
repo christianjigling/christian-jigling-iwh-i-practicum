@@ -56,3 +56,51 @@ input[type="submit"] {
     padding: .375rem 1rem;
     margin-top: 10px;
 }
+
+h1 {
+    text-align: center;
+    margin-top:100px;
+}
+
+a {
+    display:flex;
+    justify-content: center;
+}
+
+/* Grundinställningar för tabellen */
+table {
+    width: 80%; /* Tar upp 80% av skärmens bredd */
+    margin: 20px auto; /* Centrerar tabellen på sidan */
+    border-collapse: collapse; /* Slår ihop ramarna så det inte blir dubbla linjer */
+    font-family: sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* En mjuk skugga runt hela tabellen */
+}
+
+/* Padding och borders för alla celler (både rubriker och vanlig data) */
+th, td {
+    padding: 12px 15px; /* Skapar luft runt texten */
+    border: 1px solid #dddddd; /* Ljusgrå ram runt varje cell */
+    text-align: left;
+}
+
+/* Styling specifikt för rubrikraden */
+thead tr {
+    background-color: #ff7a59; /* HubSpot-orange */
+    color: #ffffff; /* Vit text */
+    font-weight: bold;
+}
+
+/* Zebra-ränder: Sätter en ljusgrå bakgrundsfärg på varannan rad (jämna nummer) */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Sätter en vit bakgrund på de ojämna raderna */
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Hover-effekt: Gör raden lite mörkare när musen hovrar över den */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
